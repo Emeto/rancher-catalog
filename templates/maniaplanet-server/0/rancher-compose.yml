@@ -1,57 +1,65 @@
-catalog:
-    name: "Maniaplanet Dedicated Server"
-    version: "v1.0-emetophobic"
-    description: "Maniaplanet Dedicated server for Trackmania� and Shootmania games from Nadeo based on Emetophobic's images."
-    minimum_rancher_version: v0.51.0
-    questions:
-        - variable: masterserver_account_login
-          description: "Login from your server's masterserver account"
-          label: "Masterserver Account Login"
-          required: true
-          default: "server"
-          type: "string"
-        - variable: masterserver_account_password
-          description: "Password from your server's masterserver account"
-          label: "Masterserver Account Password"
-          required: true
-          default: "secretpass"
-          type: "string"
-        - variable: masterserver_account_validation_key
-          description: "Validation key from your maniaplanet account"
-          label: "Masterserver Validation Key"
-          required: true
-          default: "ABCDEF"
-          type: "string"
-        - variable: server_port
-          description: "The port you want the server to run on"
-          label: "Maniaplanet Server port"
-          required: true
-          default: "2350"
-          type: "int"
-        - variable: exposed_port
-          description: "Exposed port on the host machine"
-          label: "Exposed Port"
-          required: true
-          default: "5030"
-          type: "int"
-        - variable: xmlrpc_port
-          description: "Port for communicating to the XML-RPC module of the server"
-          label: "XML-RPC Port"
-          required: true
-          default: "5000"
-          type: "int"
-        - variable: title
-          description: "Title pack to be used with the server"
-          label: "Title Pack"
-          required: true
-          default: "SMStorm"
-          type: "enum"
-          options:
-              - SMStorm
-              - TMCanyon
-              - TMStadium
-              - TMLagoon
-              - TMValley
-services:
-    maniaplanet-server:
-        scale: 1
+﻿--- 
+catalog: 
+  description: "Maniaplanet Dedicated server for Trackmania² and Shootmania games from Nadeo based on Emetophobic's images."
+  minimum_rancher_version: v0.51.0
+  name: "Maniaplanet Dedicated Server"
+  questions: 
+    - 
+      default: server
+      description: "Login from your server's masterserver account"
+      label: "Masterserver Account Login"
+      required: true
+      type: string
+      variable: masterserver_account_login
+    - 
+      default: secretpass
+      description: "Password from your server's masterserver account"
+      label: "Masterserver Account Password"
+      required: true
+      type: string
+      variable: masterserver_account_password
+    - 
+      default: ABCDEF
+      description: "Validation key from your maniaplanet account"
+      label: "Masterserver Validation Key"
+      required: true
+      type: string
+      variable: masterserver_account_validation_key
+    - 
+      default: "2350"
+      description: "The port you want the server to run on"
+      label: "Maniaplanet Server port"
+      required: true
+      type: int
+      variable: server_port
+    - 
+      default: "5030"
+      description: "Exposed port on the host machine"
+      label: "Exposed Port"
+      required: true
+      type: int
+      variable: exposed_port
+    - 
+      default: "5000"
+      description: "Port for communicating to the XML-RPC module of the server"
+      label: "XML-RPC Port"
+      required: true
+      type: int
+      variable: xmlrpc_port
+    - 
+      default: SMStorm
+      description: "Title pack to be used with the server"
+      label: "Title Pack"
+      options: 
+        - SMStorm
+        - TMCanyon
+        - TMStadium
+        - TMLagoon
+        - TMValley
+      required: true
+      type: enum
+      variable: title
+  version: v1.0-emetophobic
+services: 
+  maniaplanet-server: 
+    scale: 1

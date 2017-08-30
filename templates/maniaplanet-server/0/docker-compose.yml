@@ -1,11 +1,12 @@
-services:
-    mmaniaplanet-server:
-        image: 'maniaplanet-server'
-        environment:
-            - MASTERSERVER_ACCOUNT_LOGIN=${masterserver_account_login}
-            - MASTERSERVER_ACCOUNT_PASSWORD=${masterserver_account_password}
-            - MASTERSERVER_ACCOUNT_VALIDATION_KEY=${masterserver_account_validation_key}
-            - SERVER_PORT=${server_port}
-            - EXPOSED_PORT=${exposed_port}
-            - XMLRPC_PORT=${xmlrpc_port}
-            - TITLE=${title}
+﻿--- 
+services: 
+  mmaniaplanet-server: 
+    environment: 
+      - "MASTERSERVER_ACCOUNT_LOGIN=${masterserver_account_login}"
+      - "MASTERSERVER_ACCOUNT_PASSWORD=${masterserver_account_password}"
+      - "MASTERSERVER_ACCOUNT_VALIDATION_KEY=${masterserver_account_validation_key}"
+      - "SERVER_PORT=${server_port}"
+      - "EXPOSED_PORT=${exposed_port}"
+      - "XMLRPC_PORT=${xmlrpc_port}"
+      - "TITLE=${title}"
+    image: maniaplanet-server
